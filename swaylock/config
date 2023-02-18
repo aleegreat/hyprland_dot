@@ -3,9 +3,9 @@ ignore-empty-password
 
 clock
 timestr=%R
+datestr=%Y/%m/%d  %A
 
-
-image=~/.config/hypr/wallpapers/tree.jpg
+image=~/.config/swaylock/wallpaper/river.jpg
 
 fade-in=0.2
 
