@@ -6,15 +6,13 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-		"wlr/workspaces",
-		"custom/media"
+		"wlr/workspaces"
 		],
     "modules-center": ["hyprland/window"],
     "modules-right": [
 		//"mpris",
-		"custom/updates", 
 		"pulseaudio#speaker",
-        "pulseaudio#recorder",
+		"pulseaudio#recorder",
 		"network", 
 		"backlight", 
 		"battery", 
@@ -72,19 +70,7 @@
         "format-alt": "{:%Y-%m-%d}",
         "today-format":"<b><u>{}</u></b>"
     },
-    "mpris": {
-        "format": "{player_icon} {title}",
-        "format-paused": "{status_icon} {title}",
-        "player-icons": {
-            "default": "▶",
-            "mpv": "🎵"
-        },
-        "status-icons": {
-            "paused": "⏸ "
-        },
-        "ignored-players": ["firefox", "edge"]
-        //
-    },
+
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": " " ,
@@ -141,23 +127,11 @@
         "spacing": 10,
         "show-passive-items": false
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
     "custom/change_wallpaper":{
         "format":" {}",
         "interval": 300,
         "on-click": "bash ~/.config/hypr/scripts/change_wallpaper.sh change",
         "tooltip-format": "{} Change Wallpaper"
 
-    },
+    }
 }

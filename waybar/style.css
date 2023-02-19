@@ -33,6 +33,7 @@ tooltip {
 #workspaces,
 #tray,
 #backlight,
+#mpris,
 #custom-change_wallpaper
  {
     background: @mantle;
@@ -123,6 +124,10 @@ tooltip {
 
 #backlight {
     color: @rosewater;
+}
+
+#mpris {
+    color: @sapphire;
 }
 
 #custom-change_wallpaper {
