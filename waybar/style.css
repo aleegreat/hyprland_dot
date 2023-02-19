@@ -19,7 +19,7 @@ tooltip {
     border-radius: 5px;
     border-width: 2px;
     border-style: solid;
-    border-color: @crust;
+    border-color: @overlay2;
 }
 
 #custom-language,
@@ -64,7 +64,7 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: @blue;
+    color: @peach;
 }
 
 #workspaces button.focused {
@@ -81,7 +81,7 @@ tooltip {
 
 #workspaces button:hover {
     background: @surface2;
-    color: @subtext1;
+    color: @peach;
     border-radius: 6px;
 }
 
@@ -92,7 +92,7 @@ tooltip {
 }
 
 #clock {
-    color: @yellow;
+    color: @sky;
 }
 
 #network {
@@ -100,15 +100,29 @@ tooltip {
 }
 
 #pulseaudio {
-    color: @teal;
+    color: @mauve;
+}
+
+#pulseaudio.recorder {
+    color: @sapphire;
 }
 
 #battery {
-    color: @sky;
+    color: @green;
+}
+
+#battery.charging.critical {
+    color: @green;
+    font-weight:bold;
+}
+#battery.discharging.critical {
+    color: @red;
+    background: @yellow;
+    font-weight:bold;
 }
 
 #backlight {
-    color: @sapphire;
+    color: @rosewater;
 }
 
 #custom-change_wallpaper {

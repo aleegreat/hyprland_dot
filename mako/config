@@ -4,22 +4,32 @@ on-button-right=dismiss-all
 on-button-middle=dismiss
 
 group-by=category
-
-font=UbuntuMono 12
-background-color=#00000066
-text-color=#e5e9f0
-width=315
-height=200
+font=Twemoji,NotoSans Nerd Font 12
+background-color=#11111b
+text-color=#b4befe
+width=350
+height=300
 padding=10
 margin=10
 progress-color=over #eceff480
-icon-path=/usr/share/icons/Arc-X-D
+icon-path=/usr/share/icons/Qogir-dark
 max-icon-size=70
 layer=overlay
 
-border-size=1
-border-radius=8
-border-color=#53E2AEFF
+border-size=2
+border-radius=5
+border-color=#88c0d0
 
+default-timeout=5000
+
+[urgency=low]
+border-color=#cccccc
 default-timeout=3000
 
+[urgency=normal]
+border-color=#6c7086
+default-timeout=10000
+
+[urgency=high]
+border-color=#bf616a
+default-timeout=15000
