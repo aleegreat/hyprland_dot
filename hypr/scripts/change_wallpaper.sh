@@ -12,10 +12,10 @@ IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
 init(){
     swww init
     sleep 3
-    swww img "${IMG_PATH}" --transition-step 100 --transition-fps 60 --transition-type random
+    swww img "${IMG_PATH}" --transition-step 60 --transition-fps 60 --transition-type random
 }
 change(){
-    swww img "${IMG_PATH}" --transition-step 100 --transition-fps 60 --transition-type random ;
+    swww img "${IMG_PATH}" --transition-step 60 --transition-fps 60 --transition-type random ;
 }
 
 case "$1" in
