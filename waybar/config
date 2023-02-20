@@ -144,8 +144,8 @@
     "custom/media": {
         "format": "{icon} {}",
         "format-icons": {
-            "Playing": " ",
-            "Paused": " ",
+            "Playing": " ",
+            "Paused": " ",
         },
         "escape": true,
         "on-click": "playerctl play-pause",
@@ -153,7 +153,7 @@
         "on-click-middle": "playerctl previous",
         "max-length": 100,
         "return-type": "json",
-        "exec": "playerctl -p com.github.gmg137.netease-cloud-music-gtk metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F" ,
+        "exec": "playerctl -i edge,firefox metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F" ,
         "tooltip": true
     },
 }
