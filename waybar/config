@@ -71,7 +71,7 @@
         "rotate": 0,
         "format": "{: %m-%d  %R}",
         "today-format":"<b><u>{}</u></b>",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "{calendar}",
         "on-click": "bash ~/.config/hypr/scripts/change_wallpaper.sh change"
     },
     "mpris": {
@@ -101,6 +101,7 @@
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": " {icon}",
+        "format-muted": "Muted ﱝ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -113,15 +114,14 @@
         "scroll-step": 5,
         "on-click": "pavucontrol",
         //todo, Mute
-        "on-click-right": "" 
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle" 
     },
     "pulseaudio#recorder": {
         "format": "{format_source}",
         "format-bluetooth": " {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "ﱝ {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": "Muted ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -131,11 +131,10 @@
             "car": "",
             "default": ["", "", "墳", ""]
         },
-        "on-click": "pavucontrol",
-        //todo, Mute
-        "on-click-right": "",
-        "on-scroll-up": "",
-        "on-scroll-down": ""
+        "on-click": "",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%"
     },
     "tray": {
         "icon-size": 21,
@@ -144,15 +143,17 @@
     },
     "custom/media": {
         "format": "{icon} {}",
+        "format-icons": {
+            "Playing": " ",
+            "Paused": " ",
+        },
         "escape": true,
         "on-click": "playerctl play-pause",
-        // "on-click-middle":"",
-        "on-click-right": "playerctl stop",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous",
-        "smooth-scrolling-threshold": 10,
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous",
         "max-length": 100,
         "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/media.py 2> /dev/null", 
+        "exec": "playerctl -p com.github.gmg137.netease-cloud-music-gtk metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F" ,
+        "tooltip": true
     },
 }

@@ -16,6 +16,7 @@ init(){
 }
 change(){
     swww img "${IMG_PATH}" --transition-step 60 --transition-fps 60 --transition-type random ;
+    notify-send -u "normal" "🌁 Wallpaper Changed"
 }
 
 case "$1" in
