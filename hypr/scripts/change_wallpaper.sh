@@ -10,7 +10,7 @@ IMG_PATH=${WALLPAPER_PATH}/$IMG_NAME
 #swaybg -i "${IMG_PATH}"
 
 init(){
-    /usr/bin/swww init
+    swww init
     sleep 3
     swww img "${IMG_PATH}" --transition-step 100 --transition-fps 60 --transition-type random
 }

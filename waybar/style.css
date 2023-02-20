@@ -10,8 +10,8 @@
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: @lavender;
+    background: @base; /*rgba(21, 18, 27, 0);*/
+
 }
 
 tooltip {
@@ -34,9 +34,10 @@ tooltip {
 #tray,
 #backlight,
 #mpris,
-#custom-change_wallpaper
+#custom-change_wallpaper,
+#custom-media
  {
-    background: @mantle;
+    background: @base;
     padding: 0px 5px;
     margin: 3px 0px;
     margin-top: 5px;
@@ -133,3 +134,8 @@ tooltip {
 #custom-change_wallpaper {
     color: @lavender;
 }
+
+#custom-media {
+    color: @green;
+}
+

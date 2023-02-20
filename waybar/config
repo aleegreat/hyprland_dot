@@ -1,30 +1,31 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 45, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "layer": "top",
+    "position": "top",
+    "height": 45,
+    // "width": 1280,
     "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "margin-left": 4,
+    "margin-right": 4,
     "modules-left": [
-		"wlr/workspaces"
-		],
+        "wlr/workspaces",
+        "custom/media"
+        //"mpris",
+    ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
-		//"mpris",
-		"pulseaudio#speaker",
-		"pulseaudio#recorder",
-		"network", 
-		"backlight", 
-		"battery", 
-		"clock", 
-		"custom/change_wallpaper",
-		"tray"
-		],
+        "pulseaudio#speaker",
+        "pulseaudio#recorder",
+        "network", 
+        "backlight", 
+        "battery", 
+        "clock", 
+        "tray"
+    ],
     // Modules configuration
      "wlr/workspaces": {
-		"on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-		"disable-scroll": true,
+        "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
         "sort-by-number": true,
@@ -42,7 +43,10 @@
      },
 
     "hyprland/window": {
-		"format": "{}"
+        "format": "✌️ {}",
+        "max-length": 40,
+        "tooltip": true,
+        "separate-outputs": true
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -59,18 +63,29 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "format": "{: %R  %m-%d}",
-        "tooltip-format": "{calendar}",
-        "format-alt": "{:%Y-%m-%d}",
-        "today-format":"<b><u>{}</u></b>"
+        "interval": 60,
+        "align": 0,
+        "rotate": 0,
+        "format": "{: %m-%d  %R}",
+        "today-format":"<b><u>{}</u></b>",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": "bash ~/.config/hypr/scripts/change_wallpaper.sh change"
     },
-
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} ",
+        "player-icons": {
+            "default": "",
+            "mpv": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        // "ignored-players": ["firefox"]
+    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": " " ,
@@ -127,11 +142,17 @@
         "spacing": 10,
         "show-passive-items": false
     },
-    "custom/change_wallpaper":{
-        "format":" {}",
-        "interval": 300,
-        "on-click": "bash ~/.config/hypr/scripts/change_wallpaper.sh change",
-        "tooltip-format": "{} Change Wallpaper"
-
-    }
+    "custom/media": {
+        "format": "{icon} {}",
+        "escape": true,
+        "on-click": "playerctl play-pause",
+        // "on-click-middle":"",
+        "on-click-right": "playerctl stop",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "smooth-scrolling-threshold": 10,
+        "max-length": 100,
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/media.py 2> /dev/null", 
+    },
 }
