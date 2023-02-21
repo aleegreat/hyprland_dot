@@ -87,48 +87,43 @@
         // "ignored-players": ["firefox"]
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " " ,
+        "format-wifi": "{essid}  " ,
         "format-ethernet": "{ipaddr}/{cidr}  ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "WIFI:{essid} | Strenght:{signalStrength}% | Down:{bandwidthDownBits}, Up:{bandwidthUpBits}",
-        "on-click-right": "iwgtk"
+        "tooltip-format-wifi": "{essid} | {signalStrength}% | ⏫:{bandwidthDownBits}, ⏬:{bandwidthUpBits}",
+        "on-click-right": "iwgtk",
+        "on-click-middle": "nmcli dev wifi rescan"
     },
     "pulseaudio#speaker": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "Muted ﱝ",
+        "format": "{icon} {volume}%",
+        "format-muted": "{icon} ﱝ Muted",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset":  "",
+            "headphone": " ",
+            "hands-free": " ",
+            "headset":  " ",
             "phone": "",
             "portable": "",
-            "car": "",
-            "default": ["", "", "墳", ""]
+            "car": " ",
+            "default": ["", "", "墳", " "]
         },
         "scroll-step": 5,
         "on-click": "pavucontrol",
-        //todo, Mute
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle" 
     },
     "pulseaudio#recorder": {
         "format": "{format_source}",
-        "format-bluetooth": " {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "Muted ",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset":  "",
+            "headphone": " ",
+            "hands-free": " ",
+            "headset":  " ",
             "phone": "",
             "portable": "",
-            "car": "",
+            "car": " ",
             "default": ["", "", "墳", ""]
         },
         "on-click": "",
