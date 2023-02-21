@@ -98,8 +98,8 @@
         "on-click-middle": "nmcli dev wifi rescan"
     },
     "pulseaudio#speaker": {
-        "format": "{icon} {volume}%",
-        "format-muted": "{icon} ﱝ Muted",
+        "format": "{volume}% {icon} ",
+        "format-muted": "Muted ﱝ ",
         "format-icons": {
             "headphone": " ",
             "hands-free": " ",
