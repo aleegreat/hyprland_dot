@@ -1,7 +1,7 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "drun,run,filebrowser,window";
     show-icons: true;
-    terminal: "alacritty";
+    terminal: "xfce4-terminal";
     drun-display-format: "{icon} {name}";
     icon-theme: "Papirus";
     location: 0;
@@ -14,6 +14,12 @@ configuration{
     display-window: " 﩯  Window";
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
+
+    filebrowser {
+      directory: "~";
+      directories-first: true;
+      sorting-method:    "name";
+  }
 }
 
 @theme "mytheme"
