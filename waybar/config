@@ -110,8 +110,8 @@
             "default": ["", "", "墳", " "]
         },
         "scroll-step": 5,
-        "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle" 
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol" 
     },
     "pulseaudio#recorder": {
         "format": "{format_source}",
